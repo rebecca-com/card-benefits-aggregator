@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Card Benefits Aggregator</title>
+  <style>
+    body{font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial; padding:18px;}
+    table{border-collapse:collapse; width:100%;}
+    th,td{border:1px solid #ddd; padding:10px; vertical-align:top;}
+    th{position:sticky; top:0; background:#f7f7f7; text-align:left;}
+    .small{color:#666; font-size:12px;}
+  </style>
+</head>
+<body>
+  <h1>Card Benefits Aggregator</h1>
+  <p class="small">Auto-updated daily via GitHub Actions. Data is scraped from the public pages linked in the table.</p>
+  <table id="t">
+    <thead>
+      <tr>
+        <th>Card</th>
+        <th>Welcome bonus</th>
+        <th>Spend requirement</th>
+        <th>Accelerators</th>
+        <th>Annual fee (text)</th>
+        <th>Perks hint</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+async function run(){
+  const res = await fetch("./data/cards.json");
+  const rows = await res.json();
+  const tb = document.querySelector("#t tbody");
+  tb.innerHTML = "";
+  for (const r of rows){
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>
+        <div><b>${r.name || ""}</b></div>
+        <div class="small">${r.issuer || ""}</div>
+        <div><a href="${r.url || "#"}" target="_blank" rel="noreferrer">source</a></div>
+      </td>
+      <td>${r.welcome_bonus || ""}</td>
+      <td>${r.spend_requirement || ""}</td>
+      <td>${r.accelerators || ""}</td>
+      <td>${r.annual_fee_text || ""}</td>
+      <td>${r.perks_hint || ""}</td>
+      <td class="small">${r.status || ""}</td>
+    `;
+    tb.appendChild(tr);
+  }
+}
+run();
+</script>
+</body>
+</html>
