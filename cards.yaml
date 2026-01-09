@@ -1,0 +1,20 @@
+cards:
+  - id: southwest_rr_plus
+    name: Southwest Rapid Rewards Plus
+    issuer: Chase
+    url: "PASTE_PUBLIC_CARD_URL_HERE"
+
+  - id: aadvantage_platinum_select
+    name: AAdvantage Platinum Select World Elite
+    issuer: Citi
+    url: "PASTE_PUBLIC_CARD_URL_HERE"
+
+  - id: frontier_card
+    name: Frontier Airlines World Mastercard
+    issuer: Barclays
+    url: "PASTE_PUBLIC_CARD_URL_HERE"
+
+  - id: atmos_ascent
+    name: Atmos Rewards Ascent
+    issuer: "Unknown"
+    url: "PASTE_PUBLIC_CARD_URL_HERE"
