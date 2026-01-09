@@ -6,7 +6,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-OUT_DIR = Path("public/data")
+OUT_DIR = Path("docs/data")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def normalize_ws(s: str) -> str:
