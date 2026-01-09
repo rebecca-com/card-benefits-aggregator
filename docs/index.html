@@ -32,7 +32,9 @@
 
 <script>
 async function run(){
-  const res = await fetch("./data/cards.json");
+ const res = await fetch("./data/cards.json?v=" + Date.now());
+if (!res.ok) throw new Error("Fetch failed: " + res.status + " " + res.statusText);
+
   const rows = await res.json();
   const tb = document.querySelector("#t tbody");
   tb.innerHTML = "";
@@ -54,7 +56,11 @@ async function run(){
     tb.appendChild(tr);
   }
 }
-run();
+run().catch(err => {
+  const tb = document.querySelector("#t tbody");
+  tb.innerHTML = `<tr><td colspan="7"><b>ERROR:</b> ${err.message}</td></tr>`;
+});
+
 </script>
 </body>
 </html>
