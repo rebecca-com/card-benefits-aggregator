@@ -1,0 +1,5 @@
+id,name,issuer,url,status,welcome_bonus,spend_requirement,accelerators,annual_fee_text,perks_hint,bonus_snippet,spend_snippet,fee_snippet,earn_snippet
+southwest_rr_plus,Southwest Rapid Rewards Plus,Chase,PASTE_PUBLIC_CARD_URL_HERE,MISSING_URL,,,,,,,,,
+aadvantage_platinum_select,AAdvantage Platinum Select World Elite,Citi,PASTE_PUBLIC_CARD_URL_HERE,MISSING_URL,,,,,,,,,
+frontier_card,Frontier Airlines World Mastercard,Barclays,PASTE_PUBLIC_CARD_URL_HERE,MISSING_URL,,,,,,,,,
+atmos_ascent,Atmos Rewards Ascent,Unknown,PASTE_PUBLIC_CARD_URL_HERE,MISSING_URL,,,,,,,,,
